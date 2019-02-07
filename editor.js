@@ -27,96 +27,106 @@ function update() {
 
 
 // BUTTON HANDLERS
-clear.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('removeFormat');
-    update();
-});
+editor.addEventListener('focus', init);
 
-heading.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('formatBlock', false, 'H2');
-    update();
-});
+function init() {
+    console.log('focused');
+    editor.removeEventListener('focus', init);
 
+    clear.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('removeFormat');
+        update();
+    });
 
-italics.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('italic');
-    update();
-});
-
-bold.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('bold');
-    update();
-});
-
-underline.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('underline');
-    update();
-});
-
-strikethrough.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('strikethrough');
-    update();
-});
+    heading.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('formatBlock', false, 'H2');
+        update();
+    });
 
 
-ul.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('insertUnorderedList');
-    update();
-});
+    italics.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('italic');
+        update();
+    });
 
-ol.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('insertOrderedList');
-    update();
-});
+    bold.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('bold');
+        update();
+    });
+
+    underline.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('underline');
+        update();
+    });
+
+    strikethrough.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('strikethrough');
+        update();
+    });
 
 
-video.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    let url = prompt("Link to the YouTube video");
-    let id = '';
+    ul.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('insertUnorderedList');
+        update();
+    });
 
-    if (url.includes('youtu.be')) {
-        id = url.split('youtu.be/')[1];
-        id = id.split('?')[0];
-    } else {
-        id = url.split('watch?v=')[1];
-        id = id.split('&')[0];
-    }
+    ol.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('insertOrderedList');
+        update();
+    });
 
-    console.log(id);
 
-    let html = `<div style='position:relative; padding-bottom:calc(100.00% + 44px)'><iframe width="1920" height="978" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
-    document.execCommand('insertHtml', false, html);
-    update();
-});
+    video.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        let url = prompt("Link to the YouTube video");
+        if (url == null) return;
+        let id = '';
 
-image.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    let url = prompt("Link to the image");
-    let alt = prompt("Alternative text");
-    let html = `<div style='position:relative; padding-bottom:calc(100.00% + 44px)'><img src="${url}" alt="${alt}"></div>`;
-    document.execCommand('insertHtml', false, html);
-    update();
-});
+        if (url.includes('youtu.be')) {
+            id = url.split('youtu.be/')[1];
+            id = id.split('?')[0];
+        } else {
+            id = url.split('watch?v=')[1];
+            id = id.split('&')[0];
+        }
 
-gfy.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    let url = prompt("Link to the Gfycat video");
-    let html = `<div style='position:relative; padding-bottom:calc(100.00% + 44px)'><iframe src='${url}' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>`;
-    document.execCommand('insertHtml', false, html);
-    update();
-});
+        console.log(id);
 
-hr.addEventListener('mousedown', function (e){
-    e.preventDefault();
-    document.execCommand('insertHorizontalRule');
-    update();
-});
+        let html = `<div class="embed"><iframe src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
+        document.execCommand('insertHtml', false, html);
+        update();
+    });
+
+    image.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        let url = prompt("Link to the image");
+        if (url == null) return;
+        let alt = prompt("Alternative text");
+        let html = `<div class="embed"><img src="${url}" alt="${alt}"></div>`;
+        document.execCommand('insertHtml', false, html);
+        update();
+    });
+
+    gfy.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        let url = prompt("Link to the Gfycat video");
+        if (url == null) return;
+        let html = `<div class="embed"><iframe src='${url}' frameborder='0' scrolling='no' allowfullscreen></iframe></div>`;
+        document.execCommand('insertHtml', false, html);
+        update();
+    });
+
+    hr.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand('insertHorizontalRule');
+        update();
+    });
+}
