@@ -7,32 +7,39 @@
     <link rel="stylesheet" href="css/editor.min.css">
 </head>
 <body>
-<div class="container">
-<h1>Editor Prototype</h1>
 
-    <div id="editor">
-        <div id="tools">
-            <button title="Clear formatting" id="clear">C</button>
-            <button title="Insert header" id="heading">H</button>
-            <hr>
-            <button title="Italic" id="italics">I</button>
-            <button title="Bold" id="bold">B</button>
-            <button title="Underline" id="underline">U</button>
-            <button title="Strikethrough" id="strikethrough">S</button>
-            <hr>
-            <button title="Unordered list" id="ul">ul</button>
-            <button title="Ordered list" id="ol">ol</button>
-            <hr>
-            <button title="Insert video" id="video">vid</button>
-            <button title="Insert image" id="image">img</button>
-            <button title="Insert Gfycat" id="gfy">gfy</button>
-            <hr>
-            <button title="Insert horizontal line" id="hr">hr</button>
+<a class="github ribbon" href="https://github.com/Atulin/wysiwyg">
+    Fork me on Github!
+</a>
+
+<div id="body">
+    <div class="container">
+        <h1>Editor Prototype</h1>
+
+        <div id="editor">
+            <div id="tools">
+                <button title="Clear formatting" id="clear">C</button>
+                <button title="Insert header" id="heading">H</button>
+                <hr>
+                <button title="Italic" id="italics">I</button>
+                <button title="Bold" id="bold">B</button>
+                <button title="Underline" id="underline">U</button>
+                <button title="Strikethrough" id="strikethrough">S</button>
+                <hr>
+                <button title="Unordered list" id="ul">ul</button>
+                <button title="Ordered list" id="ol">ol</button>
+                <hr>
+                <button title="Insert video" id="video">vid</button>
+                <button title="Insert image" id="image">img</button>
+                <button title="Insert Gfycat" id="gfy">gfy</button>
+                <hr>
+                <button title="Insert horizontal line" id="hr">hr</button>
+            </div>
+            <div id="input" contenteditable="true"></div>
+            <textarea name="editor" id="output" cols="30" rows="10"></textarea>
         </div>
-        <div id="input" contenteditable="true"></div>
-        <textarea name="editor" id="output" cols="30" rows="10"></textarea>
-    </div>
 
+    </div>
 </div>
 
 <script src="editor.min.js"></script>

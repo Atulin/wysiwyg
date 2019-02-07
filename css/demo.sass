@@ -2,6 +2,7 @@
 
 $bg: #2f2f2f
 $fg: #f1f1f1
+$ribbon: #fc0000
 
 html,
 body
@@ -10,16 +11,35 @@ body
   padding: 0
   margin: 0
   color: $fg
+  overflow: hidden
+
+div#body
+  box-sizing: border-box
+  min-width: 100vw
+  min-height: 100vh
+  border: 20px solid lighten($bg, 1)
 
 div.container
-  box-sizing: border-box
-
   display: flex
   flex-direction: column
   justify-items: center
   align-items: center
+  min-width: 20vw
+  width: 50vw
+  max-width: 50rem
+  margin: 0 auto
 
-  min-width: 100vw
-  min-height: 100vh
+a.github.ribbon
+  position: absolute
+  top: 50px
+  right: -60px
 
-  border: 20px solid lighten($bg, 1)
+  transform: rotate(45deg)
+
+  color: white
+  text-decoration: none
+
+  background: $ribbon
+  border: 3px solid lighten($ribbon, 20)
+  padding: 5px 50px
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.33)
