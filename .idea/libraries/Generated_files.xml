@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/editor.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/chalk/index.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/chalk/node_modules/supports-color/browser.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/chalk/node_modules/supports-color/index.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/chalk/templates.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/postcss/lib/input.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/postcss/lib/list.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/postcss/lib/node.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/postcss/lib/root.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/postcss/lib/rule.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/postcss/lib/tokenize.min.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/semver/semver.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/editor.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/chalk/index.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/chalk/node_modules/supports-color/browser.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/chalk/node_modules/supports-color/index.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/chalk/templates.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/postcss/lib/input.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/postcss/lib/list.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/postcss/lib/node.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/postcss/lib/root.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/postcss/lib/rule.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/postcss/lib/tokenize.min.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/semver/semver.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

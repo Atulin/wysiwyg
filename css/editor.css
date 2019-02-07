@@ -1,0 +1,46 @@
+div#editor {
+  box-sizing: border-box;
+  min-width: 20rem;
+  width: 100%;
+  padding: 1rem; }
+  div#editor > textarea#output {
+    visibility: collapse; }
+  div#editor > div#input {
+    padding: 0.5rem;
+    min-height: 1rem;
+    background: #454545; }
+    div#editor > div#input > div {
+      margin-bottom: 1rem; }
+
+div#editor > div#tools {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+  margin-left: -1px;
+  margin-right: -1px; }
+  div#editor > div#tools > hr {
+    width: 3px;
+    margin: 0;
+    border: none; }
+  div#editor > div#tools > button {
+    box-sizing: border-box;
+    padding: 6px;
+    flex-grow: 1;
+    background: #232228;
+    border: 1px solid #2f2e36;
+    color: #f1f1f1; }
+    div#editor > div#tools > button:hover {
+      background: #28272e;
+      border: 1px solid #3b3944; }
+    div#editor > div#tools > button#italics {
+      font-style: italic; }
+    div#editor > div#tools > button#bold {
+      font-weight: bold; }
+    div#editor > div#tools > button#underline {
+      text-decoration: underline; }
+    div#editor > div#tools > button#strikethrough {
+      text-decoration: line-through; }
+
+/*# sourceMappingURL=editor.css.map */
