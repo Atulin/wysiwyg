@@ -23,9 +23,34 @@ ___
 * Horizontal line ``<hr>``
 * Formatting clear
 
-## File sizes
+### File sizes
 
 * ``editor.min.css`` 1.17 KB
 * ``editor.min.js`` 4.59 KB (could probably be optimized a lil' bit more)
 * ``snippet.htm`` 974 B
 * **Total:** 6.73 KB
+
+___
+
+## Build guide
+
+### With JetBrains IDE
+
+Use [watchers.xml](watchers.xml) to set up file watchers. Set the following scopes:
+
+1. Closure Compiler: ``file:*.js&&!file:*.min.js&&!file[editor]:node_modules//*``
+2. SASS: ``project files``
+3. PostCSS: ``file[editor]:css/*.css&&!file:*.min.css``
+
+### Without JetBrains IDE
+
+At least until I figure out a better build system...
+
+#### Javascript
+
+1. Run ``google-closure-compiler`` with ``--compilation_level SIMPLE_OPTIMIZATIONS`` parameter
+
+#### CSS
+
+1. Run SASS compiler
+2. Run PostCSS

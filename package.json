@@ -1,0 +1,27 @@
+{
+  "name": "wysiwyg",
+  "version": "1.0.0",
+  "description": "WYSIWYG editor in vanilla JS",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.4.7",
+    "cssnano": "^4.1.8",
+    "google-closure-compiler": "^20190121.0.0",
+    "postcss-cli": "^6.1.1",
+    "postcss-discard-comments": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atulin/wysiwyg.git"
+  },
+  "author": "Atulin",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Atulin/wysiwyg/issues"
+  },
+  "homepage": "https://github.com/Atulin/wysiwyg#readme"
+}
