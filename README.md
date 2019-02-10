@@ -8,7 +8,7 @@ So I took it upon myself to use my close-to-nonexistent Javascript skills, some 
 
 And here it is, the result of an evening and a half of work.Open source under [LGPL 3.0](README.md) license.
 
-#[DEMO HERE](https://atulin.github.io/wysiwyg/)
+# [DEMO HERE](https://atulin.github.io/wysiwyg/)
 
 ___
 
