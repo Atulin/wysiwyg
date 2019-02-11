@@ -1,22 +1,30 @@
-const editor        = document.querySelector('div#editor>div#input');
-const output        = document.querySelector('div#editor>textarea#output');
+// Selector functions
+function dqs(selector) { return document.querySelector(selector) }
+function eqs(parent, selector) { return parent.querySelector(selector) }
 
-const clear       = document.querySelector("div#editor>div#tools>button#clear");
-const heading       = document.querySelector("div#editor>div#tools>button#heading");
+// Input and output
+const editor      = dqs('div#editor>div#input');
+const output      = dqs('div#editor>textarea#output');
 
-const italics       = document.querySelector("div#editor>div#tools>button#italics");
-const bold          = document.querySelector("div#editor>div#tools>button#bold");
-const underline     = document.querySelector("div#editor>div#tools>button#underline");
-const strikethrough = document.querySelector("div#editor>div#tools>button#strikethrough");
+const
+    tools         = dqs("div#editor>div#tools"), // Toolbar element
 
-const ul            = document.querySelector("div#editor>div#tools>button#ul");
-const ol            = document.querySelector("div#editor>div#tools>button#ol");
+    clear         = eqs(tools, "button#clear"),
+    heading       = eqs(tools, "button#heading"),
 
-const video         = document.querySelector("div#editor>div#tools>button#video");
-const image         = document.querySelector("div#editor>div#tools>button#image");
-const gfy           = document.querySelector("div#editor>div#tools>button#gfy");
+    italics       = eqs(tools, "button#italics"),
+    bold          = eqs(tools, "button#bold"),
+    underline     = eqs(tools, "button#underline"),
+    strikethrough = eqs(tools, "button#strikethrough"),
 
-const hr            = document.querySelector("div#editor>div#tools>button#hr");
+    ul            = eqs(tools, "button#ul"),
+    ol            = eqs(tools, "button#ol"),
+
+    video         = eqs(tools, "button#video"),
+    image         = eqs(tools, "button#image"),
+    gfy           = eqs(tools, "button#gfy"),
+
+    hr            = eqs(tools, "button#hr");
 
 // FUNCTIONS
 editor.addEventListener('keyup', update);
@@ -25,6 +33,13 @@ function update() {
     output.value = editor.innerHTML;
 }
 
+function register(button, command, value = null) {
+    button.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        document.execCommand(command, false, value);
+        update();
+    });
+}
 
 // BUTTON HANDLERS
 editor.addEventListener('focus', init);
@@ -33,57 +48,22 @@ function init() {
     console.log('focused');
     editor.removeEventListener('focus', init);
 
-    clear.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('removeFormat');
-        update();
-    });
+    // Register pure command buttons
+    register(clear,         'removeFormat');
+    register(heading,       'formatBlock', 'H2');
 
-    heading.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('formatBlock', false, 'H2');
-        update();
-    });
+    register(italics,       'italic');
+    register(bold,          'bold');
+    register(underline,     'underline');
+    register(strikethrough, 'strikethrough');
 
+    register(ul,            'insertUnorderedList');
+    register(ol,            'insertOrderedList');
 
-    italics.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('italic');
-        update();
-    });
-
-    bold.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('bold');
-        update();
-    });
-
-    underline.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('underline');
-        update();
-    });
-
-    strikethrough.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('strikethrough');
-        update();
-    });
+    register(hr,            'insertHorizontalRule');
 
 
-    ul.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('insertUnorderedList');
-        update();
-    });
-
-    ol.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('insertOrderedList');
-        update();
-    });
-
-
+    // Add listeners for embeds
     video.addEventListener('mousedown', function (e) {
         e.preventDefault();
         let url = prompt("Link to the YouTube video");
@@ -121,12 +101,6 @@ function init() {
         if (url == null) return;
         let html = `<div class="embed"><iframe src='${url}' frameborder='0' scrolling='no' allowfullscreen></iframe></div>`;
         document.execCommand('insertHtml', false, html);
-        update();
-    });
-
-    hr.addEventListener('mousedown', function (e) {
-        e.preventDefault();
-        document.execCommand('insertHorizontalRule');
         update();
     });
 }
