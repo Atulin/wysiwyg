@@ -26,9 +26,9 @@ ___
 ### File sizes
 
 * ``editor.min.css`` 1.17 KB
-* ``editor.min.js`` ~~4.59~~ 3.7 KB
+* ``editor.min.js`` ~~4.59~~ 3.66 KB
 * ``snippet.htm`` 974 B
-* **Total:** ~~6.73~~ 5.84 KB
+* **Total:** ~~6.73~~ 5.8 KB
 
 ___
 

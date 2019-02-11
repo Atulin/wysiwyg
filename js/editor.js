@@ -45,7 +45,6 @@ function register(button, command, value = null) {
 editor.addEventListener('focus', init);
 
 function init() {
-    console.log('focused');
     editor.removeEventListener('focus', init);
 
     // Register pure command buttons
@@ -77,8 +76,6 @@ function init() {
             id = url.split('watch?v=')[1];
             id = id.split('&')[0];
         }
-
-        console.log(id);
 
         let html = `<div class="embed"><iframe src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
         document.execCommand('insertHtml', false, html);
