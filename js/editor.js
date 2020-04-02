@@ -5,6 +5,7 @@ function eqs(parent, selector) { return parent.querySelector(selector) }
 // Input and output
 const editor      = dqs('div#editor>div#input');
 const output      = dqs('div#editor>textarea#output');
+const counter     = dqs('div#editor>div#counter');
 
 const
     tools         = dqs("div#editor>div#tools"), // Toolbar element
@@ -31,6 +32,7 @@ editor.addEventListener('keyup', update);
 
 function update() {
     output.value = editor.innerHTML;
+    counter.innerText = editor.innerText.length;
 }
 
 function register(button, command, value = null) {
