@@ -25,32 +25,15 @@ ___
 
 ### File sizes
 
-* ``editor.min.css`` 1.17 KB
-* ``editor.min.js`` ~~4.59~~ 3.66 KB
+* ``editor.min.css`` ~~1.17 KB~~ **.24 KB**
+* ``editor.min.js`` ~~4.59~~ ~~3.66 KB~~ **2.49 KB**
 * ``snippet.htm`` 974 B
-* **Total:** ~~6.73~~ 5.8 KB
+* **Total:** ~~6.73~~ ~~5.8 KB~~ **4.7 KB**
 
 ___
 
 ## Build guide
 
-### With JetBrains IDE
-
-Use [watchers.xml](watchers.xml) to set up file watchers. Set the following scopes:
-
-1. Closure Compiler: ``file:*.js&&!file:*.min.js&&!file[editor]:node_modules//*``
-2. SASS: ``project files``
-3. PostCSS: ``file[editor]:css/*.css&&!file:*.min.css``
-
-### Without JetBrains IDE
-
-At least until I figure out a better build system...
-
-#### Javascript
-
-1. Run ``google-closure-compiler`` with ``--compilation_level SIMPLE_OPTIMIZATIONS`` parameter
-
-#### CSS
-
-1. Run SASS compiler
-2. Run PostCSS
+* `npm run start` or `gulp watch:all` to watch for file changes
+* `npm run build` or `gulp all` to build for release
+* `npm run serve` or `gulp serve` to run BrowserSync

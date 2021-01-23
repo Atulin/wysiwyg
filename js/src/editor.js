@@ -33,10 +33,19 @@ editor.addEventListener('keyup', update);
 function update() {
     output.value = editor.innerHTML;
     counter.innerText = editor.innerText.length;
+
+    italics.toggleActive('italic');
+    bold.toggleActive('bold');
+    underline.toggleActive('underline');
+    strikethrough.toggleActive('strikethrough');
+}
+
+HTMLButtonElement.prototype.toggleActive =  function (command) {
+    this.classList.toggle('active', document.queryCommandState(command));
 }
 
 function register(button, command, value = null) {
-    button.addEventListener('mousedown', function (e) {
+    button.addEventListener('click', function (e) {
         e.preventDefault();
         document.execCommand(command, false, value);
         update();
@@ -79,7 +88,7 @@ function init() {
             id = id.split('&')[0];
         }
 
-        let html = `<div class="embed"><iframe src="https://www.youtube.com/embed/${id}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
+        let html = `<div class="embed"><iframe src="https://www.youtube.com/embed/${id}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`;
         document.execCommand('insertHtml', false, html);
         update();
     });
@@ -98,7 +107,7 @@ function init() {
         e.preventDefault();
         let url = prompt("Link to the Gfycat video");
         if (url == null) return;
-        let html = `<div class="embed"><iframe src='${url}' frameborder='0' scrolling='no' allowfullscreen></iframe></div>`;
+        let html = `<div class="embed"><iframe src='${url}' allowfullscreen></iframe></div>`;
         document.execCommand('insertHtml', false, html);
         update();
     });

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACE,4BAAO;EACL,QAAQ,EAAE,QAAQ;EAClB,cAAc,EAAE,MAAM;EACtB,MAAM,EAAE,CAAC;EAET,qCAAQ;IACN,QAAQ,EAAE,QAAQ;IAClB,GAAG,EAAE,CAAC;IACN,IAAI,EAAE,CAAC;IACP,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI",
-"sources": ["embeds.sass"],
-"names": [],
-"file": "embeds.css"
-}

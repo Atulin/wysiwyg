@@ -1,3 +1,5 @@
+@use "vars" as v
+
 div#editor
   box-sizing: border-box
   min-width: 20rem
@@ -10,7 +12,7 @@ div#editor
   &>div#input
     padding: 0.5rem
     min-height: 100%
-    background: $editor-bg
+    background: v.$editor-bg
 
     &>div
       margin-bottom: 1rem

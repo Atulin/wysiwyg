@@ -1,3 +1,5 @@
+@use "vars" as v
+
 div#editor>div#tools
   display: flex
   flex-direction: row
@@ -17,13 +19,17 @@ div#editor>div#tools
     box-sizing: border-box
     padding: 6px
     flex-grow: 1
-    background: $btn-bg
-    border: 1px solid lighten($btn-bg, 5)
-    color: $text
+    background: v.$btn-bg
+    border: 1px solid lighten(v.$btn-bg, 5)
+    color: v.$text
+    cursor: pointer
 
     &:hover
-      background: lighten($btn-bg, 2)
-      border: 1px solid lighten($btn-bg, 10)
+      background: lighten(v.$btn-bg, 2)
+      border: 1px solid lighten(v.$btn-bg, 10)
+
+    &.active
+      background-color: lighten(v.$btn-bg, 8)
 
     &#italics
       font-style: italic

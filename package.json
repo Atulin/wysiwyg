@@ -1,18 +1,29 @@
 {
   "name": "wysiwyg",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "WYSIWYG editor in vanilla JS",
   "main": "index.html",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.7.5",
+    "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v8.0.1",
+    "autoprefixer": "^10.2.3",
+    "browser-sync": "^2.26.13",
     "cssnano": "^4.1.10",
-    "google-closure-compiler": "^20190121.0.0",
-    "postcss-cli": "^6.1.3",
-    "postcss-discard-comments": "^4.0.2"
+    "fibers": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-if": "^3.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.0.1",
+    "postcss": "^8.2.4",
+    "sass": "^1.32.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp watch:all",
+    "serve": "gulp serve",
+    "build": "gulp all"
   },
   "repository": {
     "type": "git",
