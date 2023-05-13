@@ -7,7 +7,7 @@
   "devDependencies": {
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker#v8.0.1",
     "autoprefixer": "^10.2.3",
-    "browser-sync": "^2.26.13",
+    "browser-sync": "^2.29.1",
     "cssnano": "^4.1.10",
     "fibers": "^5.0.0",
     "gulp": "^4.0.2",
